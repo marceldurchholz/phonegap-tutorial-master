@@ -2,10 +2,11 @@ var app = {
 
     initialize: function() {
         var self = this;
-        //this.store = new MemoryStore();
+		//this.store = new MemoryStore();
         //this.store = new LocalStorageStore();
         this.store = new WebSqlStore(function () {
             self.route();
+			self.showAlert('Store Initialized', 'Info');
         });
         this.detailsURL = /^#employees\/(\d{1,})/;
         this.registerEvents();
